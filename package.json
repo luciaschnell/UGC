@@ -1,0 +1,19 @@
+{
+  "name": "lucia-ugc-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio web UGC de Lucía (@luciaaa.s._) - Moda, Belleza, Maquillaje & Lifestyle",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "ugc",
+    "portfolio",
+    "creator",
+    "beauty",
+    "fashion",
+    "tiktok"
+  ],
+  "author": "Lucía",
+  "license": "MIT"
+}
