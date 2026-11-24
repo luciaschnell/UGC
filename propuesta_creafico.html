@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Dossier UGC — Lucía para Creafico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #0b0c10;
+      color: #f1f0f5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      position: relative;
+      overflow: hidden;
+      padding: 16mm 18mm;
+      background: radial-gradient(circle at 85% 15%, rgba(99, 102, 241, 0.18) 0%, transparent 45%),
+                  radial-gradient(circle at 15% 85%, rgba(244, 162, 144, 0.15) 0%, transparent 40%),
+                  linear-gradient(180deg, #0e1017 0%, #08090d 100%);
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .page:last-child {
+      page-break-after: avoid;
+    }
+
+    /* Top Bar Header */
+    .doc-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+    }
+
+    .brand-pair {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-lucia {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .brand-lucia span {
+      color: #f4a290;
+      font-style: italic;
+    }
+
+    .brand-separator {
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 1.1rem;
+    }
+
+    .brand-target {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #818cf8;
+      text-transform: uppercase;
+      background: rgba(99, 102, 241, 0.12);
+      padding: 3px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+
+    .doc-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #a5b4fc;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 4px 12px;
+      border-radius: 9999px;
+    }
+
+    /* Main Cover / Hero Area */
+    .hero-banner {
+      background: linear-gradient(135deg, rgba(26, 28, 40, 0.85) 0%, rgba(18, 19, 28, 0.95) 100%);
+      border: 1px solid rgba(244, 162, 144, 0.25);
+      border-radius: 18px;
+      padding: 22px 26px;
+      margin-bottom: 18px;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #f4a290;
+      background: rgba(244, 162, 144, 0.12);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.85rem;
+      line-height: 1.2;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #f4a290 0%, #dfa375 50%, #818cf8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: #c5c3d4;
+      max-width: 90%;
+    }
+
+    /* Section titles */
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .section-heading-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #6366f1;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .section-heading-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.01em;
+    }
+
+    /* Video Spotlight Showcase Card */
+    .video-spotlight {
+      display: grid;
+      grid-template-columns: 145px 1fr;
+      gap: 20px;
+      background: rgba(20, 22, 32, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: 16px 20px;
+      margin-bottom: 18px;
+    }
+
+    .phone-preview-box {
+      width: 145px;
+      height: 240px;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      background: #000;
+      border: 2px solid rgba(244, 162, 144, 0.4);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    .phone-preview-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .play-badge-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(244, 162, 144, 0.9);
+      color: #0b0c10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .video-tag-pill {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      right: 8px;
+      background: rgba(11, 12, 16, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #f4a290;
+      text-align: center;
+      padding: 3px 0;
+      border-radius: 6px;
+    }
+
+    .video-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .video-meta-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 6px;
+    }
+
+    .video-type-badge {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #818cf8;
+      background: rgba(99, 102, 241, 0.15);
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .video-duration {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      font-weight: 600;
+    }
+
+    .video-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+      line-height: 1.25;
+    }
+
+    .video-argument {
+      font-size: 0.82rem;
+      line-height: 1.5;
+      color: #cbd5e1;
+      margin-bottom: 12px;
+    }
+
+    .video-highlights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .highlight-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 8px 10px;
+      border-radius: 8px;
+    }
+
+    .highlight-card strong {
+      display: block;
+      font-size: 0.76rem;
+      color: #f4a290;
+      margin-bottom: 2px;
+    }
+
+    .highlight-card span {
+      font-size: 0.72rem;
+      color: #94a3b8;
+      line-height: 1.35;
+      display: block;
+    }
+
+    .btn-watch {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 8px;
+      width: fit-content;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    }
+
+    /* Why Fit Cards Grid */
+    .fit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .fit-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 14px;
+    }
+
+    .fit-icon {
+      font-size: 1.2rem;
+      color: #818cf8;
+      margin-bottom: 8px;
+    }
+
+    .fit-box h4 {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .fit-box p {
+      font-size: 0.76rem;
+      line-height: 1.45;
+      color: #94a3b8;
+    }
+
+    /* Page Footer */
+    .doc-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.74rem;
+      color: #64748b;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-links a {
+      color: #818cf8;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* PAGE 2 STYLING */
+    .concepts-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .concept-card {
+      background: rgba(22, 25, 36, 0.7);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      border-left: 4px solid #818cf8;
+      border-radius: 12px;
+      padding: 14px 18px;
+    }
+
+    .concept-badge {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #f4a290;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .concept-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .concept-hook {
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 0.78rem;
+      color: #e2e8f0;
+      margin-bottom: 6px;
+      font-style: italic;
+    }
+
+    .concept-hook strong {
+      color: #818cf8;
+      font-style: normal;
+    }
+
+    .concept-body {
+      font-size: 0.76rem;
+      line-height: 1.45;
+      color: #94a3b8;
+    }
+
+    /* Comparison / Creator Trust Card */
+    .creator-trust-banner {
+      background: linear-gradient(135deg, rgba(244, 162, 144, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
+      border: 1px solid rgba(244, 162, 144, 0.3);
+      border-radius: 14px;
+      padding: 16px 20px;
+      margin-bottom: 18px;
+    }
+
+    .trust-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .trust-desc {
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: #cbd5e1;
+    }
+
+    /* Next Steps Action Box */
+    .next-steps-card {
+      background: linear-gradient(135deg, rgba(30, 34, 52, 0.9) 0%, rgba(18, 20, 30, 0.95) 100%);
+      border: 1px solid rgba(99, 102, 241, 0.35);
+      border-radius: 14px;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .next-steps-text h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .next-steps-text p {
+      font-size: 0.78rem;
+      color: #94a3b8;
+      line-height: 1.4;
+    }
+
+    .contact-buttons-col {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .btn-contact {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #818cf8;
+      color: #0b0c10;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .btn-social {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== PÁGINA 1 ==================== -->
+  <div class="page">
+    <div>
+      <!-- Header -->
+      <div class="doc-header">
+        <div class="brand-pair">
+          <div class="brand-lucia">Lucía <span>UGC</span></div>
+          <span class="brand-separator">&times;</span>
+          <div class="brand-target">Creafico Colaboración</div>
+        </div>
+        <div class="doc-tag">Estilo & Vídeo de Selección</div>
+      </div>
+
+      <!-- Hero Callout: 100% focused on Lucía's style fit -->
+      <div class="hero-banner">
+        <div class="hero-pill">⚡ Mi Estilo de Vídeo para Vuestra Marca</div>
+        <h1 class="hero-title">Comunicación Natural a Cámara: <span>Lucía</span></h1>
+        <p class="hero-desc">
+          Mi principal fortaleza es el <strong>formato hablando directamente a cámara (Talking Head)</strong>: natural, fresco, con contacto visual directo y ritmo ágil. No sueno a locución de anuncio corporativo; transmito como una creadora recomendando una herramienta imprescindible con total credibilidad.
+        </p>
+      </div>
+
+      <!-- Sección 1: El Vídeo de mi Portfolio -->
+      <div class="section-heading">
+        <div class="section-heading-num">1</div>
+        <div class="section-heading-title">El Vídeo de mi Portfolio que Refleja este Estilo</div>
+      </div>
+
+      <div class="video-spotlight">
+        <div class="phone-preview-box">
+          <img src="assets/images/avatar.jpeg" alt="Lucía hablando a cámara" class="phone-preview-img">
+          <div class="play-badge-overlay">&#9658;</div>
+          <div class="video-tag-pill">TALKING HEAD &bull; 9:16</div>
+        </div>
+
+        <div class="video-details">
+          <div>
+            <div class="video-meta-top">
+              <span class="video-type-badge">Formato Seleccionado</span>
+              <span class="video-duration">Formato Nativo 9:16</span>
+            </div>
+            <h3 class="video-name">Vídeo Hablando a Cámara: Soltura, Cercanía & Retención</h3>
+            <p class="video-argument">
+              En este vídeo podéis ver de forma directa mi manera de comunicar: <strong>sin artificios, con energía positiva y una dicción limpia</strong>. Consigue retener al espectador desde el segundo 0 porque se percibe como una recomendación sincera y real.
+            </p>
+
+            <div class="video-highlights-grid">
+              <div class="highlight-card">
+                <strong>Gancho en Primeros 3s</strong>
+                <span>Frena el scroll de inmediato planteando una pregunta o situación real.</span>
+              </div>
+              <div class="highlight-card">
+                <strong>Naturalidad ante Cámara</strong>
+                <span>Hablo con soltura y fluidez, sin que parezca que leo un guion forzado.</span>
+              </div>
+              <div class="highlight-card">
+                <strong>Subtítulos & Ritmo Ágil</strong>
+                <span>Edición pensada para mantener la atención visual hasta la llamada a la acción.</span>
+              </div>
+              <div class="highlight-card">
+                <strong>Alto Rendimiento en Ads</strong>
+                <span>Formato óptimo para campañas de TikTok Ads, Spark Ads y Reels.</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://www.tiktok.com/@luciaaa.s._/video/7706605991244188961" target="_blank" class="btn-watch">
+            Ver Vídeo en Directo en TikTok &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Sección 2: Mis Puntos Fuertes -->
+      <div class="section-heading">
+        <div class="section-heading-num">2</div>
+        <div class="section-heading-title">Por Qué Mi Estilo Encaja con Vuestro Formato</div>
+      </div>
+
+      <div class="fit-grid">
+        <div class="fit-box">
+          <div class="fit-icon">&#128241;</div>
+          <h4>Creadora Activa (+130 vídeos)</h4>
+          <p>Grabo contenido habitualmente en TikTok y Reels. Conozco el ritmo, las tendencias y cómo retener al usuario en formato vertical.</p>
+        </div>
+        <div class="fit-box">
+          <div class="fit-icon">&#129309;</div>
+          <h4>Confianza & Credibilidad</h4>
+          <p>Al tener una comunidad real y cercana, mis recomendaciones no parecen publicidad pagada, sino un descubrimiento útil de una amiga.</p>
+        </div>
+        <div class="fit-box">
+          <div class="fit-icon">&#127919;</div>
+          <h4>Estructura Orientada a Conversión</h4>
+          <p>Planteo el problema de forma cotidiana, demuestro la solución en pantalla y cierro con un Call To Action claro y directo.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer P1 -->
+    <div class="doc-footer">
+      <span>Lucía UGC &bull; Dossier Creadora</span>
+      <div class="footer-links">
+        <a href="https://github.com/luciaschnell/UGC">Portfolio Web</a>
+        <a href="https://www.tiktok.com/@luciaaa.s._">TikTok: @luciaaa.s._</a>
+        <a href="https://www.instagram.com/luciaaa.s._/">Instagram</a>
+      </div>
+      <span>Página 1 de 2</span>
+    </div>
+  </div>
+
+  <!-- ==================== PÁGINA 2 ==================== -->
+  <div class="page">
+    <div>
+      <!-- Header -->
+      <div class="doc-header">
+        <div class="brand-pair">
+          <div class="brand-lucia">Lucía <span>UGC</span></div>
+          <span class="brand-separator">&times;</span>
+          <div class="brand-target">Creafico Colaboración</div>
+        </div>
+        <div class="doc-tag">Ángulos de Vídeo & Ganchos</div>
+      </div>
+
+      <!-- Sección 3: Cómo Plantearía Mis Vídeos Hablando a Cámara -->
+      <div class="section-heading">
+        <div class="section-heading-num">3</div>
+        <div class="section-heading-title">3 Ángulos de Contenido que Puedo Grabar para Vosotros</div>
+      </div>
+
+      <div class="concepts-grid">
+        <!-- Concept 1 -->
+        <div class="concept-card">
+          <span class="concept-badge">Ángulo 01 &bull; Problema - Solución (Alto CTR en Ads)</span>
+          <h4 class="concept-title">"El bloqueo creativo a la hora de grabar contenido"</h4>
+          <div class="concept-hook">
+            <strong>Gancho (0-3s a cámara):</strong> "¿Cuánto tiempo pierdes al día haciendo scroll buscando qué vídeo grabar? Yo antes me quedaba en blanco... hasta que encontré esto."
+          </div>
+          <p class="concept-body">
+            <strong>Desarrollo:</strong> Muestro mi pantalla utilizando la plataforma, explico de forma visual lo rápido que encuentro ideas que ya están funcionando y cierro con llamada a la acción clara para probarla.
+          </p>
+        </div>
+
+        <!-- Concept 2 -->
+        <div class="concept-card">
+          <span class="concept-badge">Ángulo 02 &bull; Consejo / Hack para Creadores</span>
+          <h4 class="concept-title">"El secreto para saber qué funciona antes de encender la cámara"</h4>
+          <div class="concept-hook">
+            <strong>Gancho (0-3s a cámara):</strong> "Si creas vídeos para TikTok o Reels, tienes que dejar de adivinar qué se va a hacer viral. Te cuento mi truco..."
+          </div>
+          <p class="concept-body">
+            <strong>Desarrollo:</strong> Tono de confidencia y recomendación personal. Muestro cómo analizo los vídeos virales de otros perfiles y preparo mi guion en minutos con subtítulos dinámicos de colores.
+          </p>
+        </div>
+
+        <!-- Concept 3 -->
+        <div class="concept-card">
+          <span class="concept-badge">Ángulo 03 &bull; Storytime & Mi Flujo de Grabación</span>
+          <h4 class="concept-title">"De cero ideas a 7 vídeos listos para la semana"</h4>
+          <div class="concept-hook">
+            <strong>Gancho (0-3s a cámara):</strong> "El lunes no tenía ni idea de qué publicar esta semana. En solo 15 minutos dejé todos los guiones listos. Os enseño cómo lo hago."
+          </div>
+          <p class="concept-body">
+            <strong>Desarrollo:</strong> Formato dinámico, relajado y cotidiano hablando a cámara en mi espacio habitual, mostrando la agilidad del proceso y la facilidad de uso.
+          </p>
+        </div>
+      </div>
+
+      <!-- Sección 4: Por Qué Este Enfoque Convierte Mejor -->
+      <div class="creator-trust-banner">
+        <div class="trust-title">
+          <span>&#128161;</span> El Valor de una Recomendación Real
+        </div>
+        <p class="trust-desc">
+          Cuando un gran influencer hace una promoción, la audiencia sabe que hay un contrato publicitario masivo y pierde la confianza. Cuando una creadora con un perfil real y cercano habla directamente a cámara mostrando cómo usa la aplicación en su rutina diaria, <strong>la credibilidad es total y la tasa de conversión en registros se dispara</strong>.
+        </p>
+      </div>
+
+      <!-- Sección 5: Próximos Pasos -->
+      <div class="next-steps-card">
+        <div class="next-steps-text">
+          <h4>Lista para empezar a colaborar</h4>
+          <p>
+            Plena disponibilidad para formalizar el contrato, acceder a vuestro portal de creadores y grabar el primer vídeo de prueba con la estructura que mejor os encaje.
+          </p>
+        </div>
+        <div class="contact-buttons-col">
+          <a href="https://www.tiktok.com/@luciaaa.s._" target="_blank" class="btn-contact">
+            TikTok: @luciaaa.s._ &rarr;
+          </a>
+          <a href="https://www.instagram.com/luciaaa.s._/" target="_blank" class="btn-social">
+            Instagram: @luciaaa.s._
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer P2 -->
+    <div class="doc-footer">
+      <span>Lucía UGC &bull; Propuesta de Colaboración</span>
+      <div class="footer-links">
+        <a href="https://github.com/luciaschnell/UGC">Portfolio UGC</a>
+        <a href="mailto:lucia@ugc.local">Contacto</a>
+      </div>
+      <span>Página 2 de 2</span>
+    </div>
+  </div>
+
+</body>
+</html>
