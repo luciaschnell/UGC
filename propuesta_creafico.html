@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
   <style>
-    * {
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -19,20 +19,22 @@
     }
 
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background-color: #0b0c10;
       color: #f1f0f5;
       -webkit-font-smoothing: antialiased;
+      margin: 0;
+      padding: 0;
     }
 
     .page {
       width: 210mm;
       height: 297mm;
+      box-sizing: border-box;
       position: relative;
-      overflow: hidden;
-      padding: 16mm 18mm;
-      background: radial-gradient(circle at 85% 15%, rgba(99, 102, 241, 0.18) 0%, transparent 45%),
-                  radial-gradient(circle at 15% 85%, rgba(244, 162, 144, 0.15) 0%, transparent 40%),
+      padding: 12mm 16mm 12mm 16mm;
+      background: radial-gradient(circle at 85% 15%, rgba(99, 102, 241, 0.16) 0%, transparent 45%),
+                  radial-gradient(circle at 15% 85%, rgba(244, 162, 144, 0.14) 0%, transparent 40%),
                   linear-gradient(180deg, #0e1017 0%, #08090d 100%);
       page-break-after: always;
       display: flex;
@@ -50,19 +52,19 @@
       align-items: center;
       justify-content: space-between;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      padding-bottom: 12px;
-      margin-bottom: 18px;
+      padding-bottom: 10px;
+      margin-bottom: 14px;
     }
 
     .brand-pair {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     .brand-lucia {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.3rem;
       font-weight: 700;
       color: #fff;
     }
@@ -74,29 +76,29 @@
 
     .brand-separator {
       color: rgba(255, 255, 255, 0.3);
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
 
     .brand-target {
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       font-weight: 800;
       letter-spacing: 0.08em;
       color: #818cf8;
       text-transform: uppercase;
       background: rgba(99, 102, 241, 0.12);
-      padding: 3px 10px;
+      padding: 2px 9px;
       border-radius: 6px;
       border: 1px solid rgba(99, 102, 241, 0.3);
     }
 
     .doc-tag {
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       color: #a5b4fc;
       background: rgba(255, 255, 255, 0.05);
-      padding: 4px 12px;
+      padding: 3px 10px;
       border-radius: 9999px;
     }
 
@@ -104,34 +106,34 @@
     .hero-banner {
       background: linear-gradient(135deg, rgba(26, 28, 40, 0.85) 0%, rgba(18, 19, 28, 0.95) 100%);
       border: 1px solid rgba(244, 162, 144, 0.25);
-      border-radius: 18px;
-      padding: 22px 26px;
-      margin-bottom: 18px;
+      border-radius: 14px;
+      padding: 14px 20px;
+      margin-bottom: 12px;
       position: relative;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
     }
 
     .hero-pill {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      font-size: 0.75rem;
+      gap: 6px;
+      font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: #f4a290;
       background: rgba(244, 162, 144, 0.12);
-      padding: 4px 12px;
+      padding: 3px 10px;
       border-radius: 9999px;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     .hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.85rem;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.55rem;
       line-height: 1.2;
       color: #fff;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .hero-title span {
@@ -142,27 +144,26 @@
     }
 
     .hero-desc {
-      font-size: 0.88rem;
-      line-height: 1.55;
+      font-size: 0.8rem;
+      line-height: 1.48;
       color: #c5c3d4;
-      max-width: 90%;
     }
 
     /* Section titles */
     .section-heading {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 12px;
+      gap: 8px;
+      margin-bottom: 8px;
     }
 
     .section-heading-num {
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
       background: #6366f1;
       color: #fff;
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 800;
       display: flex;
       align-items: center;
@@ -170,7 +171,7 @@
     }
 
     .section-heading-title {
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       font-weight: 800;
       color: #fff;
       letter-spacing: -0.01em;
@@ -179,24 +180,24 @@
     /* Video Spotlight Showcase Card */
     .video-spotlight {
       display: grid;
-      grid-template-columns: 145px 1fr;
-      gap: 20px;
-      background: rgba(20, 22, 32, 0.8);
+      grid-template-columns: 125px 1fr;
+      gap: 16px;
+      background: rgba(20, 22, 32, 0.85);
       border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 16px;
-      padding: 16px 20px;
-      margin-bottom: 18px;
+      border-radius: 14px;
+      padding: 12px 16px;
+      margin-bottom: 12px;
     }
 
     .phone-preview-box {
-      width: 145px;
-      height: 240px;
-      border-radius: 16px;
+      width: 125px;
+      height: 195px;
+      border-radius: 12px;
       overflow: hidden;
       position: relative;
       background: #000;
       border: 2px solid rgba(244, 162, 144, 0.4);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     }
 
     .phone-preview-img {
@@ -211,31 +212,31 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 44px;
-      height: 44px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
-      background: rgba(244, 162, 144, 0.9);
+      background: rgba(244, 162, 144, 0.92);
       color: #0b0c10;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.1rem;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+      font-size: 1rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     }
 
     .video-tag-pill {
       position: absolute;
-      bottom: 8px;
-      left: 8px;
-      right: 8px;
+      bottom: 6px;
+      left: 6px;
+      right: 6px;
       background: rgba(11, 12, 16, 0.9);
       border: 1px solid rgba(255, 255, 255, 0.2);
-      font-size: 0.65rem;
+      font-size: 0.62rem;
       font-weight: 700;
       color: #f4a290;
       text-align: center;
-      padding: 3px 0;
-      border-radius: 6px;
+      padding: 2px 0;
+      border-radius: 4px;
     }
 
     .video-details {
@@ -248,132 +249,132 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .video-type-badge {
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: #818cf8;
       background: rgba(99, 102, 241, 0.15);
-      padding: 3px 8px;
+      padding: 2px 7px;
       border-radius: 4px;
     }
 
     .video-duration {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       color: #9ca3af;
       font-weight: 600;
     }
 
     .video-name {
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       font-weight: 700;
       color: #fff;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       line-height: 1.25;
     }
 
     .video-argument {
-      font-size: 0.82rem;
-      line-height: 1.5;
+      font-size: 0.76rem;
+      line-height: 1.42;
       color: #cbd5e1;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     .video-highlights-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-bottom: 14px;
+      gap: 6px;
+      margin-bottom: 10px;
     }
 
     .highlight-card {
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.07);
-      padding: 8px 10px;
-      border-radius: 8px;
+      padding: 6px 8px;
+      border-radius: 6px;
     }
 
     .highlight-card strong {
       display: block;
-      font-size: 0.76rem;
+      font-size: 0.72rem;
       color: #f4a290;
       margin-bottom: 2px;
     }
 
     .highlight-card span {
-      font-size: 0.72rem;
+      font-size: 0.67rem;
       color: #94a3b8;
-      line-height: 1.35;
+      line-height: 1.3;
       display: block;
     }
 
     .btn-watch {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
       color: #fff;
       text-decoration: none;
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 700;
-      padding: 8px 16px;
-      border-radius: 8px;
+      padding: 6px 14px;
+      border-radius: 6px;
       width: fit-content;
-      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
     }
 
     /* Why Fit Cards Grid */
     .fit-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-bottom: 18px;
+      gap: 10px;
+      margin-bottom: 10px;
     }
 
     .fit-box {
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
-      padding: 14px;
+      border-radius: 10px;
+      padding: 10px 12px;
     }
 
     .fit-icon {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: #818cf8;
-      margin-bottom: 8px;
-    }
-
-    .fit-box h4 {
-      font-size: 0.86rem;
-      font-weight: 700;
-      color: #fff;
       margin-bottom: 4px;
     }
 
+    .fit-box h4 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 3px;
+    }
+
     .fit-box p {
-      font-size: 0.76rem;
-      line-height: 1.45;
+      font-size: 0.71rem;
+      line-height: 1.38;
       color: #94a3b8;
     }
 
     /* Page Footer */
     .doc-footer {
       border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 10px;
+      padding-top: 8px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       color: #64748b;
     }
 
     .footer-links {
       display: flex;
-      gap: 16px;
+      gap: 14px;
     }
 
     .footer-links a {
@@ -386,43 +387,58 @@
     .concepts-grid {
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      margin-bottom: 18px;
+      gap: 10px;
+      margin-bottom: 12px;
     }
 
     .concept-card {
-      background: rgba(22, 25, 36, 0.7);
+      background: rgba(22, 25, 36, 0.75);
       border: 1px solid rgba(99, 102, 241, 0.25);
       border-left: 4px solid #818cf8;
-      border-radius: 12px;
-      padding: 14px 18px;
+      border-radius: 10px;
+      padding: 10px 14px;
+    }
+
+    .concept-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 4px;
     }
 
     .concept-badge {
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: #f4a290;
-      margin-bottom: 4px;
-      display: block;
+    }
+
+    .concept-tag {
+      font-size: 0.65rem;
+      color: #818cf8;
+      font-weight: 700;
+      background: rgba(99, 102, 241, 0.12);
+      padding: 2px 6px;
+      border-radius: 4px;
     }
 
     .concept-title {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 700;
       color: #fff;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
 
     .concept-hook {
       background: rgba(0, 0, 0, 0.35);
       border-radius: 6px;
-      padding: 6px 10px;
-      font-size: 0.78rem;
+      padding: 5px 8px;
+      font-size: 0.74rem;
       color: #e2e8f0;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
       font-style: italic;
+      line-height: 1.35;
     }
 
     .concept-hook strong {
@@ -431,96 +447,103 @@
     }
 
     .concept-body {
-      font-size: 0.76rem;
-      line-height: 1.45;
+      font-size: 0.72rem;
+      line-height: 1.38;
       color: #94a3b8;
     }
 
-    /* Comparison / Creator Trust Card */
-    .creator-trust-banner {
-      background: linear-gradient(135deg, rgba(244, 162, 144, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
-      border: 1px solid rgba(244, 162, 144, 0.3);
-      border-radius: 14px;
-      padding: 16px 20px;
-      margin-bottom: 18px;
+    /* Page 2 Bottom Split Grid */
+    .page2-bottom-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.95fr;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .trust-card {
+      background: linear-gradient(135deg, rgba(244, 162, 144, 0.08) 0%, rgba(99, 102, 241, 0.08) 100%);
+      border: 1px solid rgba(244, 162, 144, 0.25);
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .trust-title {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       font-weight: 800;
       color: #fff;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
     .trust-desc {
-      font-size: 0.8rem;
-      line-height: 1.5;
+      font-size: 0.73rem;
+      line-height: 1.42;
       color: #cbd5e1;
     }
 
-    /* Next Steps Action Box */
     .next-steps-card {
       background: linear-gradient(135deg, rgba(30, 34, 52, 0.9) 0%, rgba(18, 20, 30, 0.95) 100%);
-      border: 1px solid rgba(99, 102, 241, 0.35);
-      border-radius: 14px;
-      padding: 18px 22px;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 12px;
+      padding: 12px 14px;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: space-between;
-      gap: 20px;
     }
 
     .next-steps-text h4 {
-      font-size: 1rem;
+      font-size: 0.85rem;
       font-weight: 800;
       color: #fff;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .next-steps-text p {
-      font-size: 0.78rem;
+      font-size: 0.71rem;
       color: #94a3b8;
-      line-height: 1.4;
+      line-height: 1.35;
+      margin-bottom: 8px;
     }
 
-    .contact-buttons-col {
+    .contact-buttons-row {
       display: flex;
-      flex-direction: column;
-      gap: 8px;
-      flex-shrink: 0;
+      gap: 6px;
     }
 
     .btn-contact {
+      flex: 1;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
       background: #818cf8;
       color: #0b0c10;
       text-decoration: none;
-      font-size: 0.8rem;
+      font-size: 0.72rem;
       font-weight: 800;
-      padding: 8px 16px;
-      border-radius: 8px;
+      padding: 6px 8px;
+      border-radius: 6px;
       text-align: center;
     }
 
     .btn-social {
+      flex: 1;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.15);
       color: #fff;
       text-decoration: none;
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       font-weight: 600;
-      padding: 6px 14px;
-      border-radius: 8px;
+      padding: 6px 8px;
+      border-radius: 6px;
+      text-align: center;
     }
   </style>
 </head>
@@ -657,19 +680,25 @@
       <div class="concepts-grid">
         <!-- Concept 1 -->
         <div class="concept-card">
-          <span class="concept-badge">Ángulo 01 &bull; Problema - Solución (Alto CTR en Ads)</span>
+          <div class="concept-top-row">
+            <span class="concept-badge">Ángulo 01 &bull; Problema - Solución</span>
+            <span class="concept-tag">Alto CTR en Ads</span>
+          </div>
           <h4 class="concept-title">"El bloqueo creativo a la hora de grabar contenido"</h4>
           <div class="concept-hook">
             <strong>Gancho (0-3s a cámara):</strong> "¿Cuánto tiempo pierdes al día haciendo scroll buscando qué vídeo grabar? Yo antes me quedaba en blanco... hasta que encontré esto."
           </div>
           <p class="concept-body">
-            <strong>Desarrollo:</strong> Muestro mi pantalla utilizando la plataforma, explico de forma visual lo rápido que encuentro ideas que ya están funcionando y cierro con llamada a la acción clara para probarla.
+            <strong>Desarrollo:</strong> Muestro la pantalla utilizando la plataforma, explico de forma visual lo rápido que encuentro ideas que ya están funcionando y cierro con llamada a la acción clara para probarla.
           </p>
         </div>
 
         <!-- Concept 2 -->
         <div class="concept-card">
-          <span class="concept-badge">Ángulo 02 &bull; Consejo / Hack para Creadores</span>
+          <div class="concept-top-row">
+            <span class="concept-badge">Ángulo 02 &bull; Consejo / Hack para Creadores</span>
+            <span class="concept-tag">Viral Organic Hook</span>
+          </div>
           <h4 class="concept-title">"El secreto para saber qué funciona antes de encender la cámara"</h4>
           <div class="concept-hook">
             <strong>Gancho (0-3s a cámara):</strong> "Si creas vídeos para TikTok o Reels, tienes que dejar de adivinar qué se va a hacer viral. Te cuento mi truco..."
@@ -681,7 +710,10 @@
 
         <!-- Concept 3 -->
         <div class="concept-card">
-          <span class="concept-badge">Ángulo 03 &bull; Storytime & Mi Flujo de Grabación</span>
+          <div class="concept-top-row">
+            <span class="concept-badge">Ángulo 03 &bull; Storytime & Mi Flujo de Grabación</span>
+            <span class="concept-tag">Retención & Confianza</span>
+          </div>
           <h4 class="concept-title">"De cero ideas a 7 vídeos listos para la semana"</h4>
           <div class="concept-hook">
             <strong>Gancho (0-3s a cámara):</strong> "El lunes no tenía ni idea de qué publicar esta semana. En solo 15 minutos dejé todos los guiones listos. Os enseño cómo lo hago."
@@ -692,31 +724,34 @@
         </div>
       </div>
 
-      <!-- Sección 4: Por Qué Este Enfoque Convierte Mejor -->
-      <div class="creator-trust-banner">
-        <div class="trust-title">
-          <span>&#128161;</span> El Valor de una Recomendación Real
-        </div>
-        <p class="trust-desc">
-          Cuando un gran influencer hace una promoción, la audiencia sabe que hay un contrato publicitario masivo y pierde la confianza. Cuando una creadora con un perfil real y cercano habla directamente a cámara mostrando cómo usa la aplicación en su rutina diaria, <strong>la credibilidad es total y la tasa de conversión en registros se dispara</strong>.
-        </p>
-      </div>
-
-      <!-- Sección 5: Próximos Pasos -->
-      <div class="next-steps-card">
-        <div class="next-steps-text">
-          <h4>Lista para empezar a colaborar</h4>
-          <p>
-            Plena disponibilidad para formalizar el contrato, acceder a vuestro portal de creadores y grabar el primer vídeo de prueba con la estructura que mejor os encaje.
+      <!-- Sección 4 & 5: Bottom Split (Valor de Confianza + Próximos Pasos) -->
+      <div class="page2-bottom-grid">
+        <!-- Tarjeta de Confianza / Por qué convierte -->
+        <div class="trust-card">
+          <div class="trust-title">
+            <span>&#128161;</span> El Valor de una Recomendación Real
+          </div>
+          <p class="trust-desc">
+            Cuando un gran influencer hace una promoción, la audiencia percibe un contrato masivo y desconecta. Cuando una creadora con comunidad cercana habla a cámara mostrando su uso real, <strong>la credibilidad es total y la tasa de conversión en registros se dispara</strong>.
           </p>
         </div>
-        <div class="contact-buttons-col">
-          <a href="https://www.tiktok.com/@luciaaa.s._" target="_blank" class="btn-contact">
-            TikTok: @luciaaa.s._ &rarr;
-          </a>
-          <a href="https://www.instagram.com/luciaaa.s._/" target="_blank" class="btn-social">
-            Instagram: @luciaaa.s._
-          </a>
+
+        <!-- Tarjeta de Acción / Próximos Pasos -->
+        <div class="next-steps-card">
+          <div class="next-steps-text">
+            <h4>Lista para Colaborar</h4>
+            <p>
+              Plena disponibilidad para formalizar el contrato, acceder al portal de creadores y grabar el primer vídeo de prueba.
+            </p>
+          </div>
+          <div class="contact-buttons-row">
+            <a href="https://www.tiktok.com/@luciaaa.s._" target="_blank" class="btn-contact">
+              TikTok &rarr;
+            </a>
+            <a href="https://www.instagram.com/luciaaa.s._/" target="_blank" class="btn-social">
+              Instagram
+            </a>
+          </div>
         </div>
       </div>
     </div>
